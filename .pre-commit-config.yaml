@@ -1,0 +1,48 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+# See https://medium.com/staqu-dev-logs/keeping-python-code-clean-with-pre-commit-hooks-black-flake8-and-isort-cac8b01e0ea1
+default_language_version:
+  python: python3.8
+repos:
+  # Hooks that modify code
+- repo: https://github.com/ambv/black
+  rev: stable
+  hooks:
+  - id: black
+- repo: https://github.com/asottile/seed-isort-config
+  rev: v1.9.3
+  hooks:
+  - id: seed-isort-config
+- repo: https://github.com/pre-commit/mirrors-isort
+  rev: v5.5.2
+  hooks:
+  - id: isort
+- repo: https://github.com/myint/docformatter
+  rev: v1.3.1
+  hooks:
+  - id: docformatter
+    args: [-i, --wrap-summaries, '92', --wrap-descriptions, '92']
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.2.0  # Use the ref you want to point at
+  hooks:
+  - id: trailing-whitespace
+- repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+  rev: 0.1.0  # or specific tag
+  hooks:
+  - id: yamlfmt
+    args: [--mapping, '2', --sequence, '2', --offset, '0', --width, '92', --implicit_start, --preserve-quotes]
+
+  # Hooks for validation
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.2.0  # Use the ref you want to point at
+  hooks:
+  - id: check-yaml
+    args: [--allow-multiple-documents, --unsafe] # Use unsafe to allow custom tags (e.g. !degrees) in ROS parameter files
+  - id: check-executables-have-shebangs
+  - id: check-case-conflict
+  - id: debug-statements
+  - id: check-xml
+- repo: https://gitlab.com/pycqa/flake8
+  rev: master
+  hooks:
+  - id: flake8
