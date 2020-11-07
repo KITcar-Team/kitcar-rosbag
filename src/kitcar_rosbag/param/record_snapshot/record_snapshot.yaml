@@ -1,0 +1,17 @@
+# Default parameter of example
+snapshot_size: 1024
+snapshot_path: "rosbag_snapshots"
+snapshot_file_prefix: "rosbag_snapshot"
+topics_to_record:
+- "/tf"
+- "/camera/image_raw"
+- "/state_estimation/state_estimation/state_estimation"
+- "/controller_interface/controller_interface/state_measure"
+- "/rosout_agg"
+- "/mission_mode"
+- "/controller_interface/controller_interface/auto_reset"
+- "/controller_interface/controller_interface/infrared_sensor_front"
+- "/controller_interface/controller_interface/infrared_sensor_back"
+- "/controller_interface/controller_interface/ultrasonic_sensor_front"
+- "/controller_interface/controller_interface/ultrasonic_sensor_back"
+- "/traffic_sign_detection/traffic_sign_detection/traffic_signs"

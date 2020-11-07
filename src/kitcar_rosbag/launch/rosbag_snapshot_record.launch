@@ -1,0 +1,5 @@
+<launch>
+    <node name="rosbag_snapshot_record" pkg="kitcar_rosbag" type="record_snapshot" output="screen">
+	   <rosparam file="$(find kitcar_rosbag)/param/record_snapshot/record_snapshot.yaml" command="load" />
+    </node>
+</launch>
