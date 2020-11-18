@@ -40,50 +40,6 @@ write_camera_car_specs()
 	END{print "\n";}' "params_$1.yaml" > "camera_car_specs_$1.yaml"
 }
 
-write_tag_template_file()
-{
-    cat > tags.txt <<EOF
-== Junction ==
-] 90 stop lines
-] not 90 stop lines
-] 90 give way lines
-] not 90 give way lines
-] Arrow
-] abknickende vorfahrtstrasse
-
-== Parking ==
-] parallel parking
-] perpendicualr parking
-
-== Mixed ==
-] obstacle
-
-== Urban Area ==
-] pedestrian island
-] crosswalk
-] no passing zone
-] road cloasure
-
-== Speed Limit ==
-] start 10 Speedlimit
-] start 20 Speedlimit
-] start 30 Speedlimit
-] start 40 Speedlimit
-] start 50 Speedlimit
-] start 60 Speedlimit
-] start 70 Speedlimit
-] start 80 Speedlimit
-] end 10 Speedlimit
-] end 20 Speedlimit
-] end 30 Speedlimit
-] end 40 Speedlimit
-] end 50 Speedlimit
-] end 60 Speedlimit
-] end 70 Speedlimit
-] end 80 Speedlimit
-EOF
-
-}
 
 if [ -z "$KITCAR_REPO_PATH" ]
 then
@@ -118,7 +74,6 @@ then
 
 		rosparam dump "params_$rosbag_prefix$now.yaml";
 		write_camera_car_specs "$rosbag_prefix$now"
-		write_tag_template_file
 		shift;
 		shift;
 
@@ -142,7 +97,6 @@ then
 
 		rosparam dump "params_$rosbagname.yaml";
 		write_camera_car_specs "$rosbagname"
-		write_tag_template_file
 		shift;
 		shift;
 
@@ -184,7 +138,6 @@ else
 
 		rosparam dump params_$now".yaml";
 		write_camera_car_specs "$now"
-		write_tag_template_file
 
     # shellcheck disable=SC2064
 		trap "{ check_bag $now.bag; }" INT
