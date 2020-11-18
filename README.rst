@@ -6,15 +6,16 @@ A ROS_ workspace with scripts to record, replay and modify rosbags.
 
 .. _ROS: https://www.ros.org/
 
-The repositories usage is licensed under a MIT license (''LICENSE'').
-If external files are used, a specific LICENSE-file is provided in the same folder, covering the usage of those files.
+The repository's usage is licensed under a MIT license (''LICENSE'').
+If external files are used, a specific LICENSE-file is provided in the same folder,
+covering the usage of those files.
 
 .. readme_installation
 
 Installation
 ============
 
-The simulation has been developed and primarily used on Ubuntu 18.04 and Ubuntu 20.04.
+The simulation has been developed and primarily used on Ubuntu 20.04.
 Other Linux distributions were not tested.
 Additionally, `ROS Installation <http://wiki.ros.org/ROS/Installation>`_ \
 must be installed.
@@ -72,7 +73,6 @@ Change into `kitcar-rosbag` folder and run the script::
    cd $KITCAR_REPO_PATH/kitcar-rosbag
    ./init/init.sh
 
-(*Ubuntu 18.04: Ignore any error thrown by pip when trying to install pygobject, it seems to be irrelevant.*)
 
 If you want to, you can also install packages that are used to run machine learning tasks or compile the documentation.
 But these packages are not needed to run all basic components of the simulation.
