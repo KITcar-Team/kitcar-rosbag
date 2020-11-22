@@ -12,21 +12,11 @@ case "$option" in
       exit 1
     fi
 
-    # initialize kitcar-gazebo-imulation
-    echo -e "\nadd kitcar-rosbag bashrc to your bashrc"
-    echo "source $KITCAR_REPO_PATH/kitcar-rosbag/init/bashrc # for kitcar-rosbag repository" >> ~/.bashrc
-
-    # load changes
-    echo "apply changes to current terminal ..."
-    source  ~/.bashrc
-
     INIT_DIR=$KITCAR_REPO_PATH/kitcar-rosbag/init
 
     # Install python packages
     echo -e "\nStart installing python packages."
     pip3 install --upgrade --upgrade-strategy eager --no-warn-script-location -r $INIT_DIR/requirements.txt
-
-    source ~/.profile
 
     # Install pre-commit hook
     cd $KITCAR_REPO_PATH/kitcar-rosbag
@@ -38,7 +28,6 @@ case "$option" in
     sed '/source .*kitcar-rosbag/d' -i ~/.bashrc
 
     echo "apply changes to current terminal ..."
-    # Source init / This fails when the simulation has not been built
     source  ~/.bashrc
   ;;
 

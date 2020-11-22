@@ -73,9 +73,14 @@ Change into `kitcar-rosbag` folder and run the script::
    cd $KITCAR_REPO_PATH/kitcar-rosbag
    ./init/init.sh
 
+If you do not use the ``bashrc`` provided in ``kitcar-init``, you also have to let ROS know
+that this repository exists.
+Do this by adding::
 
-If you want to, you can also install packages that are used to run machine learning tasks or compile the documentation.
-But these packages are not needed to run all basic components of the simulation.
+   source $KITCAR_REPO_PATH/kitcar-rosbag/init/bashrc --extend
+
+to your ``~/.bashrc``.
+
 
 Build
 -----
