@@ -1,1 +1,0 @@
-source $KITCAR_REPO_PATH/kitcar-rosbag/devel/setup.bash --extend
