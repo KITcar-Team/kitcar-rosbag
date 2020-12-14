@@ -10,6 +10,9 @@ The repository's usage is licensed under a MIT license (''LICENSE'').
 If external files are used, a specific LICENSE-file is provided in the same folder,
 covering the usage of those files.
 
+The master branch of this repository is mirrored to Github and is publicly available.
+The email address and names of all committers will be publicly visible.
+
 .. readme_installation
 
 Installation
