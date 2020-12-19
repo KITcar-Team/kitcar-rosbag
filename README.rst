@@ -6,9 +6,9 @@ A ROS_ workspace with scripts to record, replay and modify rosbags.
 
 .. _ROS: https://www.ros.org/
 
-The repository's usage is licensed under a MIT license (''LICENSE'').
-If external files are used, a specific LICENSE-file is provided in the same folder,
-covering the usage of those files.
+This repository is licensed under the MIT license (``LICENSE``).
+
+The master branch of this repository is mirrored to Github and is publicly available. The email addresses and names of all committers are publicly visible.
 
 .. readme_installation
 
